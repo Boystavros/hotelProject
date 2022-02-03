@@ -92,12 +92,12 @@ public class HotelTest {
         assertEquals(2, hotel.getVacantBedrooms().size());
     }
 
-//    @Test
-//    public void guestCannotBook(){
-//        hotel.addRoom(bedroom2);
-//        hotel.checkIn(bedroom2, guest);
-//        hotel.checkIn(bedroom2, guest2);
-////        assertEquals(1, hotel.)
-//    }
+    @Test
+    public void cannotCheckInGuest(){
+        hotel.addRoom(bedroom2);
+        hotel.checkIn(bedroom2, guest);
+        hotel.checkIn(bedroom2, guest2);
+        assertEquals(1, bedroom2.getGuests().size());
+    }
 
 }
