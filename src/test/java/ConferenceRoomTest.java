@@ -1,4 +1,5 @@
 import cc_Towers.ConferenceRoom;
+import cc_Towers.Guest;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,10 +8,12 @@ import static org.junit.Assert.assertEquals;
 public class ConferenceRoomTest {
 
     private ConferenceRoom conferenceRoom;
+    private Guest guest;
 
     @Before
     public void before(){
         this.conferenceRoom = new ConferenceRoom(5, "Main");
+        this.guest = new Guest("Anna");
     }
 
     @Test
@@ -27,4 +30,11 @@ public class ConferenceRoomTest {
     public void hasCapacity(){
         assertEquals(5, conferenceRoom.getCapacity());
     }
+
+    @Test
+    public void canAddGuest(){
+        this.conferenceRoom.addGuest(guest);
+        assertEquals(1, conferenceRoom.getGuests().size());
+    }
+
 }

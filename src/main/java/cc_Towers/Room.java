@@ -20,4 +20,13 @@ public abstract class Room {
     public int getCapacity() {
         return capacity;
     }
+
+    public void addGuest(Guest guest){
+        this.guests.add(guest);
+    }
+
+    public void removeGuest(Guest guest){
+        this.guests.remove(guest);
+    }
+
 }
